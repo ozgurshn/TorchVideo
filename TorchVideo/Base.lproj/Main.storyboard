@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mcG-bu-5pK">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Live Video Classification View Controller-->
+        <scene sceneID="CPj-p2-rsH">
+            <objects>
+                <viewController id="mcG-bu-5pK" customClass="LiveVideoClassificationViewController" customModule="TorchVideo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XtQ-sg-7uZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83V-Un-WeH" customClass="CameraPreviewView" customModule="TorchVideo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="74" width="414" height="674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="model results and inference time: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwc-9e-Qh0">
+                                <rect key="frame" x="0.0" y="808" width="414" height="44"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WTE-4R-8oO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ome-7b-WU3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="83V-Un-WeH" firstAttribute="top" secondItem="Ome-7b-WU3" secondAttribute="top" constant="30" id="13n-dZ-g5o"/>
+                            <constraint firstItem="83V-Un-WeH" firstAttribute="trailing" secondItem="Ome-7b-WU3" secondAttribute="trailing" id="Ifg-VJ-7ep"/>
+                            <constraint firstItem="Ome-7b-WU3" firstAttribute="bottom" secondItem="vwc-9e-Qh0" secondAttribute="bottom" constant="10" id="LJB-hM-CUy"/>
+                            <constraint firstItem="vwc-9e-Qh0" firstAttribute="leading" secondItem="Ome-7b-WU3" secondAttribute="leading" id="g93-U0-fxZ"/>
+                            <constraint firstItem="83V-Un-WeH" firstAttribute="leading" secondItem="Ome-7b-WU3" secondAttribute="leading" id="m1u-zO-3qV"/>
+                            <constraint firstItem="vwc-9e-Qh0" firstAttribute="top" secondItem="83V-Un-WeH" secondAttribute="bottom" constant="60" id="pXy-O2-S3o"/>
+                            <constraint firstItem="Ome-7b-WU3" firstAttribute="trailing" secondItem="vwc-9e-Qh0" secondAttribute="trailing" id="q3p-7x-agR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="v2q-Nh-sGS"/>
+                    <connections>
+                        <outlet property="cameraView" destination="83V-Un-WeH" id="kzE-vs-W68"/>
+                        <outlet property="lblResult" destination="vwc-9e-Qh0" id="UR7-d0-HMq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gri-fD-7hz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1821.7391304347827" y="-25.446428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
